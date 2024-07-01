@@ -1,0 +1,844 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sky Products</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0 200px;
+            padding: 0;
+
+        }
+        .container {
+            max-width: calc(100% - 200px);
+            margin: 0 auto;
+            padding: 0 100px;
+            padding-bottom: 20;
+        }
+        header {
+            background-color: #fff;
+            padding: 20px 0;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        .logo img {
+            height: 90px;
+            margin-left: -90px;
+        }
+        .contact {
+            display: flex;
+            align-items: center;
+            font-size: 18px;
+            margin-right: -80px;
+            margin-top: -100px;
+        }
+        .contact img {
+            width: 30px;
+            height: 30px;
+            margin-right: 10px;
+            transform: rotate(-75deg);
+        }
+        .navbar {
+            background-color: #4a90e2;
+            padding: 10px 0;
+            margin-top: -10px;
+            border-radius: 6px;
+            
+        }
+        .nav-items {
+            list-style-type: none;
+            padding: 0;
+            margin: 0;
+            width: 60%;
+            display: flex;
+            justify-content: space-between;
+            margin-left: -90px;
+           
+        }
+        .nav-item {
+            color: white;
+            text-decoration: none;
+            font-size: 16px;
+            padding: 10px 20px;
+            border-radius: 5px;
+            transition: background-color 0.3s;
+        }
+        .nav-item:hover, .nav-item.active {
+            background-color: #2c3e50;
+        }
+        .product-image {
+            width: 100%;
+            max-height: 400px;
+            object-fit: cover;
+        }
+        .product-info {
+            padding: 20px 0;
+        }
+
+        .slider-container {
+            width: 120%;
+            max-width: 1280px;
+            position: relative;
+            top: 10px;
+            left: -90px;
+            border: 18px solid rgb(230, 229, 229);
+            margin: 0 auto;
+            overflow: hidden;
+            position: relative;
+        }
+        .slider {
+            display: flex;
+            transition: transform 0.5s ease-in-out;
+        }
+        .slider img {
+            width: 100%;
+            height: auto;
+            object-fit: cover;
+        }
+        .outerbox{
+            border: 18px rgb(230, 229, 229) solid;
+            border-radius: 8px;
+            position: absolute;
+            left: 210px;
+            max-width: 520px;
+            width: 520px;
+            height: 1090px;
+        }
+        .heading
+        {
+            padding: 15px 75px;
+            background-color: rgb(230, 229, 229);
+            border :8px solid white;
+            position: relative;
+            left: 120px;
+            width: 150px;
+            font-size: 20px;
+            border-radius: 12px;
+        }
+        .boxes{
+            min-height: 1000px;
+            height: 1000px;
+            min-width: 200px;
+            width: 500px;
+            position: absolute;
+            left: 5px;
+            border-radius: 22px;
+            margin-bottom: 30px;
+            top: 70px;
+            background-color: rgb(230, 229, 229);
+            border :8px solid white;
+            overflow-y: scroll;
+            overflow-x: hidden;
+    scroll-behavior: smooth;
+            
+        }
+        .boxes::-webkit-scrollbar {
+      width: 10px; 
+   }
+
+.boxes::-webkit-scrollbar-track {
+    background:  linear-gradient(0deg, rgb(121, 120, 120) 0%, rgb(255, 255, 255) 100%);
+  }
+
+.boxes::-webkit-scrollbar-thumb {
+    background: #5d5d5d;
+    border-radius: 25px;
+  }
+
+        
+  .box {
+    border: 4px solid rgb(4, 4, 4);
+    width: 300px;
+    margin-left: 15px;
+    margin-top: 15px;
+    height: 500px;
+    border-radius: 8px;
+    box-shadow: 4px 4px 8px rgba(11, 11, 11, 0.812);
+    background-size: cover;
+    background-repeat: no-repeat;
+}
+
+.box-product1 {
+    background-image: url(https://assets.e2solution.com/media/11719/catalog/product/orignal/LMU-2.7_PS_FS.jpg);
+}
+
+.box-product2{
+    background-image: url(https://assets.e2solution.com/media/11719/catalog/product/orignal/as.jpg);
+}
+
+.box-product3 {
+    background-image: url(https://assets.e2solution.com/media/11719/catalog/product/orignal/Multipoint.jpg);
+}
+.box-product4 {
+    background-image: url(https://assets.e2solution.com/media/11719/catalog/product/orignal/Mist_Lubrication.jpg);
+}
+.box-product5 {
+    background-image: url(https://assets.e2solution.com/media/11719/catalog/product/orignal/Skey_Products2_final.jpg);
+}
+
+/* Add more product-specific classes as needed */
+
+        .box h2{
+            color: #000000;
+           
+            position: relative;
+            left: 20px;
+            top: 0px;
+            margin-top: 35px;
+            color: #fff;
+            font-size: 30px;
+        }
+        
+      
+
+        .core
+        {
+            background-color: #000000ba;
+            padding: 2px 2px;
+            position: absolute;
+            width: 416px;
+            top: 75.6%;
+            border-bottom-left-radius: 8px;
+            border-bottom-right-radius: 8px;
+            filter: drop-shadow(2px 2px 2px solid black);
+        }
+        .core h2{
+            filter: drop-shadow(3px 3px 3px black);
+        }
+
+         h1 span{
+            position: absolute;
+            top: 0;
+            left: 0;
+            height: 100%;
+            width: 0;
+            background-color: crimson;
+            animation: text_reveal_box 1s ease;
+           
+        }
+         h1:nth-child(1) span{
+            animation-delay: .5s;
+        }
+         h1:nth-child(2) span{
+            animation-delay: 1.5s;
+        }
+         h1:nth-child(3) span{
+            animation-delay: 2.5s;
+        }
+         h1{
+            display: block;
+            width: fit-content;
+            font-size: 20px;
+            filter: drop-shadow( 3px 2px 2px rgba(0, 0, 0, 0.987));
+            color: transparent;
+            animation: text_reveal .5s ease forwards;
+            animation-delay: 1s ;
+            position: relative;
+            
+        }
+         h1:nth-child(1){
+            animation-delay:1s ;
+        }
+         h1:nth-child(2){
+            animation-delay:2s ;
+        }
+         h1:nth-child(3){
+            animation: text_reveal_crimson .5s ease forwards;
+            animation-delay:3s ;
+        }
+        @keyframes text_reveal_box{
+            50%{
+                width: 100%;
+                left: 0;
+            }
+            100%{
+                width: 0;
+                left: 100%;
+            }
+        }
+        @keyframes text_reveal{
+           
+            100%{
+                color: white;
+            }
+        }
+        @keyframes text_reveal_crimson{
+           
+           100%{
+               color: crimson;
+           }
+       }
+
+       .flash{
+        position: relative;
+        top: 283px;
+       }
+
+
+       .card {
+    width: 420;
+    height: 500px;
+    perspective: 1000px;
+}
+
+.card-inner {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    transition: transform 0.6s;
+    transform-style: preserve-3d;
+}
+
+.card:hover .card-inner {
+    transform: rotateY(180deg);
+    position: relative;
+    left: 70px;
+}
+
+.box, .card-back {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    backface-visibility: hidden;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+}
+
+
+.card-back {
+    background-color: #e0e0e0;
+    transform: rotateY(180deg);
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    backface-visibility: hidden;
+    width: 220px;
+    margin-top: 30px;
+    
+    height: 470px;
+    box-shadow: 3px 3px 5px rgba(0, 0, 0, 0.987);
+    position: relative;
+    left: 17px;
+    top: 12px;
+}
+
+
+.card-back h2 {
+    color: #333;
+    margin-bottom: 15px;
+}
+
+.card-back ul {
+    list-style-type: none;
+    padding: 0;
+}
+
+.card-back li {
+    margin-bottom: 10px;
+    color: #555;
+   
+}
+
+.card-back p {
+    margin-top: 15px;
+    font-style: italic;
+    color: #777;
+}
+.card{
+    position: relative;
+    width: 420px;
+    
+}
+.card-back .button{
+    padding: 12px 16px ;
+    color: crimson;
+    background-color: #e0e0e0;
+    border:2px solid crimson;
+    width: 80px;
+    box-shadow: 3px 3px 6px rgba(0, 0, 0, 0.987);
+    border-radius: 12px;
+   transition: .5s ease-in-out;
+}
+.card-back .button:hover{
+    box-shadow: 3px 3px 8px rgba(0, 0, 0, 0.587);
+    color: white;
+    background-color: crimson;
+    border:2px solid white;
+    
+   
+}
+
+
+.product-list {
+  
+  border: 12px solid rgb(230, 229, 229);
+  font-family: Arial, sans-serif;
+  font-size: 14px;
+  color: #333;
+  padding: 4px 4px ;
+  background-color: #f9f9f9;
+}
+
+.product-list h2 {
+  margin: 0;
+  padding: 10px;
+  background-color: #f2f2f2;
+  border-bottom: 1px solid #ccc;
+  font-size: 22px;
+  font-weight: normal;
+}
+
+.product-list ul {
+  list-style-type: none;
+  font-size: 16px;
+  padding: 0;
+  margin: 0;
+}
+
+.product-list li {
+  border-bottom: 1px solid #e6e6e6;
+}
+
+.product-list li:last-child {
+  border-bottom: none;
+}
+
+.product-list a {
+  display: block;
+  text-decoration: none;
+  color: #333;
+  padding: 8px 10px;
+}
+
+.product-list a:hover {
+  background-color: #e6e6e6;
+}
+
+.product-list .bullet {
+  color: #999;
+  margin-right: 5px;
+  font-size: 10px;
+}
+
+.product-list ul ul {
+  background-color: #f2f2f2;
+}
+
+.product-list ul ul li {
+  border-bottom: none;
+}
+
+.product-list ul ul a {
+  padding-left: 25px;
+}
+
+.product-list ul ul a::before {
+  content: '\25B8';
+  color: #999;
+  margin-right: 5px;
+  font-size: 10px;
+}
+.sidebox{
+    position: relative;
+    left: 61%;
+    top: 15px;
+    width: 363px;
+}
+
+.container3 {
+    background-color: white;
+    padding: 2rem;
+    border-radius: 5px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+    width: 70%;
+    max-width: 300px;
+    height: 320px;
+    position: relative;
+    left: 575px;
+    top: 20px;
+    background-color: rgb(230, 229, 229);
+
+}
+
+h2 {
+    margin-top: -20px;
+    text-align: center;
+    margin-bottom: 1rem;
+}
+
+form {
+    display: flex;
+    flex-direction: column;
+    
+}
+
+input, textarea {
+    margin-bottom: 1rem;
+    padding: 0.5rem;
+    border: 1px solid #ccc;
+    border-radius: 3px;
+    font-size: 1rem;
+    box-shadow: 3px 3px 6px rgba(0, 0, 0, 0.587);
+}
+
+textarea {
+    height: 100px;
+    resize: vertical;
+}
+
+button {
+    background-color: #4CAF50;
+    color: white;
+    border: none;
+    padding: 0.75rem;
+    font-size: 1rem;
+    cursor: pointer;
+    border-radius: 3px;
+}
+
+button:hover {
+    background-color: #45a049;
+}
+
+#status {
+    margin-top: 1rem;
+    text-align: center;
+    font-weight: bold;
+}
+
+.footer {
+            background-color: #dfdfdf;
+            border-top: 2px solid #1c1c1c;
+            text-align: center;
+            padding: 14px;
+            position: fixed;
+            left: -200px;
+            height: 10px;
+            bottom: 0;
+            
+            width: 138.1%;
+        }
+        .footer-text {
+            color: #777;
+            font-size: 16px;
+            position: relative;
+            top: -20px;
+            font-family: Arial, sans-serif;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <header>
+            <div class="logo">
+                <img src="https://www.skeyproducts.com/media/11719/images/logo_1.png" alt="Sky Products Logo">
+            </div>
+            <div class="contact">
+                <img src="https://img.icons8.com/?size=100&id=LUMv3lMjUJuW&format=png&color=000000" alt="Phone Icon">
+                <div>Call Now: 8087930425</div>
+            </div>
+        </header>
+    </div>
+    <div class="navbar">
+        <div class="container">
+            <ul class="nav-items">
+                <li><a href="#" class="nav-item">Home</a></li>
+                <li><a href="#" class="nav-item">About Us</a></li>
+                <li><a href="#" class="nav-item active">Products</a></li>
+                <li><a href="#" class="nav-item">Contact Us</a></li>
+            </ul>
+        </div>
+    </div>
+    <main class="container">
+        <div class="slider-container">
+            <div class="slider">
+                <img src="https://assets.e2solution.com/media/11719/banners/orignal/Skey-Products-banner1_1.jpg" alt="Image 1">
+                <img src="https://assets.e2solution.com/media/11719/banners/orignal/Skey-Products-banner_2.jpg" alt="Image 2">
+                <img src="https://assets.e2solution.com/media/11719/banners/orignal/Skey-Products-banner1_1.jpg" alt="Image 3">
+                <img src="https://assets.e2solution.com/media/11719/banners/orignal/Skey-Products-banner_2.jpg" alt="Image 4">
+                <img src="https://assets.e2solution.com/media/11719/banners/orignal/Skey-Products-banner1_1.jpg" alt="Image 5">
+            </div>
+        </div>
+    </main>
+
+    <div class="hero">
+        <div class="container">
+            <div class="outerbox">
+                <div class="heading">Our products</div>
+                <div class="boxes">
+                    <div class="card">
+                        <div class="card-inner">
+                            <div class="card-front">
+                                <div class="box box-product1">
+                                    <div class="core">
+                                        <h2>Lubomatic Motorised Lubrication</h2>
+                                    </div>
+                                    <div class="flash">
+                                        <h1>Unit: LMU-2.7/PS/FS<span></span></h1>
+                                        <h1>Machine Type: Fully Automatic<span></span></h1>
+                                        <h1>₹ 5,500/ Piece<span></span></h1>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="card-back">
+                                <h2>Product Details</h2>
+                                <ul>
+                                    <li>Model: LMU-2.7/PS/FS</li>
+                                    <li>Voltage: 220V AC</li>
+                                    <li>Frequency: 50Hz</li>
+                                    <li>Power: 40W</li>
+                                    <li>Max Pressure: 70 bar</li>
+                                    <li>Lubricant: Oil or Grease</li>
+                                    <li>Tank Capacity: 2.7L</li>
+                                </ul>
+                                <p>Ideal for industrial machinery lubrication</p>
+
+                                <div class="button">view more</div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="card">
+                        <div class="card-inner">
+                            <div class="card-front">
+                                <div class="box box-product2">
+                                    <div class="core">
+                                        <h2>Lubomatic Motorised Lubrication</h2>
+                                    </div>
+                                    <div class="flash">
+                                        <h1>Unit: LMU-2.7/PS/FS<span></span></h1>
+                                        <h1>Machine Type: Fully Automatic<span></span></h1>
+                                        <h1>₹ 5,500/ Piece<span></span></h1>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="card-back">
+                                <h2>Product Details</h2>
+                                <ul>
+                                    <li>Model: LMU-2.7/PS/FS</li>
+                                    <li>Voltage: 220V AC</li>
+                                    <li>Frequency: 50Hz</li>
+                                    <li>Power: 40W</li>
+                                    <li>Max Pressure: 70 bar</li>
+                                    <li>Lubricant: Oil or Grease</li>
+                                    <li>Tank Capacity: 2.7L</li>
+                                </ul>
+                                <p>Ideal for industrial machinery lubrication</p>
+
+                                <div class="button">view more</div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="card">
+                        <div class="card-inner">
+                            <div class="card-front">
+                                <div class="box box-product3">
+                                    <div class="core">
+                                        <h2>Lubomatic Motorised Lubrication</h2>
+                                    </div>
+                                    <div class="flash">
+                                        <h1>Unit: LMU-2.7/PS/FS<span></span></h1>
+                                        <h1>Machine Type: Fully Automatic<span></span></h1>
+                                        <h1>₹ 5,500/ Piece<span></span></h1>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="card-back">
+                                <h2>Product Details</h2>
+                                <ul>
+                                    <li>Model: LMU-2.7/PS/FS</li>
+                                    <li>Voltage: 220V AC</li>
+                                    <li>Frequency: 50Hz</li>
+                                    <li>Power: 40W</li>
+                                    <li>Max Pressure: 70 bar</li>
+                                    <li>Lubricant: Oil or Grease</li>
+                                    <li>Tank Capacity: 2.7L</li>
+                                </ul>
+                                <p>Ideal for industrial machinery lubrication</p>
+
+                                <div class="button">view more</div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="card">
+                        <div class="card-inner">
+                            <div class="card-front">
+                                <div class="box box-product4">
+                                    <div class="core">
+                                        <h2>Lubomatic Motorised Lubrication</h2>
+                                    </div>
+                                    <div class="flash">
+                                        <h1>Unit: LMU-2.7/PS/FS<span></span></h1>
+                                        <h1>Machine Type: Fully Automatic<span></span></h1>
+                                        <h1>₹ 5,500/ Piece<span></span></h1>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="card-back">
+                                <h2>Product Details</h2>
+                                <ul>
+                                    <li>Model: LMU-2.7/PS/FS</li>
+                                    <li>Voltage: 220V AC</li>
+                                    <li>Frequency: 50Hz</li>
+                                    <li>Power: 40W</li>
+                                    <li>Max Pressure: 70 bar</li>
+                                    <li>Lubricant: Oil or Grease</li>
+                                    <li>Tank Capacity: 2.7L</li>
+                                </ul>
+                                <p>Ideal for industrial machinery lubrication</p>
+
+                                <div class="button">view more</div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="card">
+                        <div class="card-inner">
+                            <div class="card-front">
+                                <div class="box box-product5">
+                                    <div class="core">
+                                        <h2>Lubomatic Motorised Lubrication</h2>
+                                    </div>
+                                    <div class="flash">
+                                        <h1>Unit: LMU-2.7/PS/FS<span></span></h1>
+                                        <h1>Machine Type: Fully Automatic<span></span></h1>
+                                        <h1>₹ 5,500/ Piece<span></span></h1>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="card-back">
+                                <h2>Product Details</h2>
+                                <ul>
+                                    <li>Model: LMU-2.7/PS/FS</li>
+                                    <li>Voltage: 220V AC</li>
+                                    <li>Frequency: 50Hz</li>
+                                    <li>Power: 40W</li>
+                                    <li>Max Pressure: 70 bar</li>
+                                    <li>Lubricant: Oil or Grease</li>
+                                    <li>Tank Capacity: 2.7L</li>
+                                </ul>
+                                <p>Ideal for industrial machinery lubrication</p>
+
+                                <div class="button">view more</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+<div class="sidebox">
+
+    <div class="product-list">
+        <h2>Our Services</h2>
+        <ul>
+          <li><a href="#"><span class="bullet">&#9679;</span> MST Lubrication</a></li>
+          <li><a href="#"><span class="bullet">&#9679;</span> Oil Circulatory System (O.C.S.)</a></li>
+          <li><a href="#"><span class="bullet">&#9679;</span> Air-Oil Lubrication System</a></li>
+          <li><a href="#"><span class="bullet">&#9679;</span> Lubomatic Conveyor Lubrication System</a></li>
+          <li><a href="#"><span class="bullet">&#9679;</span> Progressive Distributor Block</a></li>
+          <li><a href="#"><span class="bullet">&#9679;</span> Lubomatic Centralised Dualine Lubrication System</a></li>
+          <li><a href="#"><span class="bullet">&#9679;</span> Lubomatic make dual line grease lubrication System to mills</a></li>
+          <li><a href="#"><span class="bullet">&#9679;</span> Metering Cartridges</a></li>
+          <li><a href="#"><span class="bullet">&#9679;</span> Pneumatic Grease and Oil Pump</a>
+            <ul>
+              <li><a href="#">&#9656; Lubomatic Pneumatic Grease / Oil Pump</a></li>
+            </ul>
+          </li>
+          <li><a href="#"><span class="bullet">&#9679;</span> Lubomatic Hand Pump For Oil & Grease</a>
+            <ul>
+              <li><a href="#">&#9656; Lubomatic Hand Pump for Oil & Grease</a></li>
+            </ul>
+          </li>
+          <li><a href="#"><span class="bullet">&#9679;</span> Orifice Metering Cartridges</a>
+            <ul>
+              <li><a href="#">&#9656; Orifice Metering Cartridges</a></li>
+            </ul>
+          </li>
+          <li><a href="#"><span class="bullet">&#9679;</span> Manifolds & Fittings</a>
+            <ul>
+              <li><a href="#">&#9656; Manifolds & Fittings</a></li>
+            </ul>
+          </li>
+        </ul>
+      </div>
+</div>
+
+
+<div class="container3">
+    <h2>Send us an enquiry</h2>
+    <form id="enquiryForm">
+        <input type="text" id="name" placeholder="Your Name" required>
+        <input type="email" id="email" placeholder="Your Email" required>
+        <textarea id="message" placeholder="Your Message" required></textarea>
+        <button type="submit">Send Enquiry</button>
+    </form>
+    <div id="status"></div>
+</div>
+
+
+<footer class="footer">
+    <p class="footer-text">&copy; 2013 [Company/Organization Name]. All rights reserved.</p>
+</footer>
+
+    <script>
+        const slider = document.querySelector('.slider');
+        const images = document.querySelectorAll('.slider img');
+        const imageWidth = slider.clientWidth;
+        let currentIndex = 0;
+        let startX;
+        let isDragging = false;
+
+        function nextSlide() {
+            currentIndex = (currentIndex + 1) % images.length;
+            updateSlider();
+        }
+
+        function updateSlider() {
+            slider.style.transform = `translateX(-${currentIndex * imageWidth}px)`;
+        }
+
+        function startDrag(e) {
+            isDragging = true;
+            startX = e.type === 'touchstart' ? e.touches[0].clientX : e.clientX;
+            slider.style.transition = 'none';
+        }
+
+        function drag(e) {
+            if (!isDragging) return;
+            const currentX = e.type === 'touchmove' ? e.touches[0].clientX : e.clientX;
+            const diff = startX - currentX;
+            slider.style.transform = `translateX(-${currentIndex * imageWidth + diff}px)`;
+        }
+
+        function endDrag(e) {
+            if (!isDragging) return;
+            isDragging = false;
+            const currentX = e.type === 'touchend' ? e.changedTouches[0].clientX : e.clientX;
+            const diff = startX - currentX;
+            
+            if (Math.abs(diff) > imageWidth / 3) {
+                currentIndex = diff > 0 ? 
+                    (currentIndex + 1) % images.length : 
+                    (currentIndex - 1 + images.length) % images.length;
+            }
+            
+            slider.style.transition = 'transform 0.5s ease-in-out';
+            updateSlider();
+        }
+
+        slider.addEventListener('mousedown', startDrag);
+        slider.addEventListener('touchstart', startDrag);
+        slider.addEventListener('mousemove', drag);
+        slider.addEventListener('touchmove', drag);
+        slider.addEventListener('mouseup', endDrag);
+        slider.addEventListener('touchend', endDrag);
+        slider.addEventListener('mouseleave', endDrag);
+
+        setInterval(nextSlide, 5000);
+    </script>
+</body>
+</html>
