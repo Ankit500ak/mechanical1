@@ -528,6 +528,204 @@ button:hover {
             top: -20px;
             font-family: Arial, sans-serif;
         }
+
+
+   /* Existing styles */
+/* ... (keep all the existing styles) ... */
+
+/* Media query for mobile devices */
+@media screen and (max-width: 768px) {
+    /* General layout adjustments */
+    body {
+        margin: 0;
+        padding: 0;
+    }
+
+    .container {
+        max-width: 100%;
+        padding: 0 20px;
+    }
+
+    /* Header modifications */
+    header {
+        flex-direction: row;
+        justify-content: space-between;
+        align-items: center;
+        padding: 10px 20px;
+    }
+
+    .logo img {
+        height: 50px;
+        margin-left: 0;
+    }
+
+    .contact {
+        display: none;
+    }
+
+    /* Hamburger menu */
+   .hamburger {
+        display: block;
+        position: fixed;
+        top: 9px;
+        right: 20px;
+        font-size: 40px;
+        cursor: pointer;
+        color: #4a90e2;
+        z-index: 1002;
+        background-color: rgba(255, 255, 255, 0.8);
+        padding: 5px 10px;
+        border-radius: 5px;
+        box-shadow: 0 2px 5px rgba(0,0,0,0.2);
+    }
+
+    /* Side navigation */
+    .navbar {
+        display: none;
+    }
+
+    .side-nav {
+        position: fixed;
+        top: 0;
+        left: -280px;
+        width: 280px;
+        height: 100%;
+        background-color: #2c3e50;
+        transition: 0.3s ease-in-out;
+        z-index: 1000;
+        overflow-y: auto;
+    }
+
+    .side-nav.open {
+        left: 0;
+        box-shadow: 2px 0 10px rgba(0,0,0,0.3);
+    }
+
+    
+    .side-nav .nav-items {
+        display: flex;
+        flex-direction: column;
+        padding: 0;
+        list-style-type: none;
+        margin: 10px 30px;
+        width: 100%;
+        position: relative;
+        top: 20%;
+        
+        align-items: center;
+        justify-content: center;
+        font-size: 90px;
+    }
+
+    .side-nav .nav-item {
+        width: 100%;
+        border-bottom: 1px solid #e0e0e0;
+        font-size: 20px;
+        width: 100%;
+        padding: 20px 70px;
+    }
+
+    .side-nav .nav-item:hover{
+        cursor: pointer;
+        background-color: #676869;
+
+
+    }
+
+    .side-nav .nav-item:last-child {
+        border-bottom: none;
+    }
+
+    .side-nav .nav-item:hover {
+        color: #4a90e2;
+    }
+
+    .close-btn {
+        position: absolute;
+        top: 20px;
+        right: 20px;
+        font-size: 30px;
+        color: white;
+        cursor: pointer;
+    }
+
+    /* Content adjustments */
+    .slider-container {
+        width: 100%;
+        left: 0;
+        border: none;
+        margin-top: 20px;
+    }
+
+    .outerbox, .sidebox, .container3 {
+        width: 100%;
+        left: 0;
+        padding-bottom: 20px;
+        position: static;
+        margin-top: 30px;
+    }
+
+    .heading {
+        left: 50%;
+        transform: translateX(-50%);
+        margin-bottom: 20px;
+    }
+    .core{
+        width: 100%;
+        height: 120px;
+    }
+
+    .core h2{
+        font-size: 20px;
+    }
+    .boxes {
+        width: 80%;
+        margin-top: 340px;
+        margin-left: 50px;
+        height: auto;
+        max-height: 600px;
+    }
+    
+    .card, .box {
+        width: 90%;
+        margin-top: -15px;
+        margin-left: -30px;
+        margin: 10px auto;
+        transition: .5s ease-in-out;
+    }
+    .card:hover{
+        position: relative;
+        left: -50px;
+    }
+    .card:hover .box{
+        width: 80%;
+        height: 70%;
+        margin-top: 40px;
+        margin-left: 40px;
+    }
+
+    .product-list, .container3 {
+        width: 90%;
+        margin: 30px auto;
+    }
+
+    /* Footer adjustments */
+    .footer {
+        position: static;
+        width: 100%;
+        left: 0;
+        padding: 20px 0;
+    }
+
+    .footer-text {
+        font-size: 14px;
+    }
+    .card-back{
+        margin-left: 20px;
+    }
+}
+
+
     </style>
 </head>
 <body>
@@ -542,6 +740,18 @@ button:hover {
             </div>
         </header>
     </div>
+
+    <div class="hamburger">&#9776;</div>
+<nav class="side-nav">
+    <span class="close-btn">&times;</span>
+    <ul class="nav-items">
+        <li><a href="#" class="nav-item">Home</a></li>
+        <li><a href="#" class="nav-item">About Us</a></li>
+        <li><a href="#" class="nav-item">Products</a></li>
+        <li><a href="#" class="nav-item">Contact Us</a></li>
+    </ul>
+</nav>
+</div>
     <div class="navbar">
         <div class="container">
             <ul class="nav-items">
@@ -583,6 +793,7 @@ button:hover {
                                     </div>
                                 </div>
                             </div>
+                            
                             <div class="card-back">
                                 <h2>Product Details</h2>
                                 <ul>
@@ -840,5 +1051,30 @@ button:hover {
 
         setInterval(nextSlide, 5000);
     </script>
+
+
+<script>
+const hamburger = document.querySelector('.hamburger');
+const sideNav = document.querySelector('.side-nav');
+const closeBtn = document.querySelector('.close-btn');
+
+hamburger.addEventListener('click', () => {
+    sideNav.classList.add('open');
+    document.body.style.overflow = 'hidden';
+});
+
+closeBtn.addEventListener('click', () => {
+    sideNav.classList.remove('open');
+    document.body.style.overflow = 'auto';
+});
+
+// Close side nav when clicking outside
+document.addEventListener('click', (e) => {
+    if (!sideNav.contains(e.target) && !hamburger.contains(e.target) && sideNav.classList.contains('open')) {
+        sideNav.classList.remove('open');
+        document.body.style.overflow = 'auto';
+    }
+});
+</script>
 </body>
 </html>
